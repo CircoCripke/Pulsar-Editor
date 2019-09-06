@@ -1,0 +1,56 @@
+﻿<Window x:Class="PulsarSaveEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="PULSAR: Lost Colony V25.3 Editor" Height="424.464" Width="1074.812" Background="White"
+        ResizeMode="CanMinimize"
+        WindowStartupLocation="CenterScreen">
+
+
+
+    <Grid HorizontalAlignment="Left" Width="1075" Height="383" Margin="0,0,-6,0" VerticalAlignment="Top">
+        <Button x:Name="OpenFileButton" Content="Open file..." HorizontalAlignment="Left" Margin="10,10,0,0" Width="100" RenderTransformOrigin="0.338,-0.318" Click="OpenFileButton_Click" Height="22" VerticalAlignment="Top"/>
+        <TextBox x:Name="OpenFileName" Height="22" Margin="115,10,530,0" TextWrapping="Wrap" VerticalAlignment="Top" IsEnabled="False"/>
+        <Button x:Name="SaveAsButton" Content="Save as..." HorizontalAlignment="Left" Margin="550,10,0,0" Width="100" RenderTransformOrigin="0.338,-0.318" Click="SaveAsButton_Click" Height="22" VerticalAlignment="Top"/>
+        <Button x:Name="ChangeValue" Content="Save Changes" HorizontalAlignment="Left" Margin="150,57,0,0" Width="103" RenderTransformOrigin="0.338,-0.318" Click="ChangeValue_Click" Height="24" VerticalAlignment="Top" Visibility="Visible"/>
+
+        <!-- TEXT -->
+        <TextBox x:Name="DisclaimerThirdParties" IsEnabled="False" Margin="10,276,25,0" TextWrapping="Wrap" Text="{StaticResource DisclaimerWarranty}" Height="58" VerticalAlignment="Top" VerticalContentAlignment="Bottom" RenderTransformOrigin="0.499,0.95"/>
+        <TextBox x:Name="DiscalimerWarranty" IsEnabled="False" Margin="10,339,25,0" TextWrapping="Wrap" Text="{StaticResource DisclaimerThirdParties}" Height="33" VerticalAlignment="Top" VerticalContentAlignment="Bottom"/>
+        <TextBlock TextWrapping="Wrap" Text="Ironman Mode" VerticalAlignment="Top" Margin="705,20,0,0" FontWeight="Bold" HorizontalAlignment="Left" Width="100"/>
+        <CheckBox x:Name="IronMode_Checker" IsChecked="False" HorizontalAlignment="Left" Margin="870,20,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="TypeSelector" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" Width="120" IsReadOnly="True" SelectionChanged="TypeSelector_SelectionChanged">
+            <TextBox x:Name="Reputation" Text="Reputation" FontWeight="Bold" BorderBrush="{x:Null}" Background="{x:Null}" IsEnabled="False"/>
+            <TextBox x:Name="Research_Materials" Text="Research Materials" FontWeight="Bold" BorderBrush="{x:Null}" Background="{x:Null}" IsEnabled="False"/>
+            <TextBox x:Name="Misc" Text="Misc Options" FontWeight="Bold" BorderBrush="{x:Null}" Background="{x:Null}" IsEnabled="False"/>
+        </ComboBox>
+        <TextBox x:Name="UpgradeMaterials_Text" Height="23" IsEnabled="True" TextWrapping="Wrap" Text="" Width="120" Margin="805,50,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="Fuel_Text" Height="23" IsEnabled="True" TextWrapping="Wrap" Text="" Width="120" Margin="805,78,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="CrewCredits_Text" Height="23" IsEnabled="True" TextWrapping="Wrap" Text="" Width="120" Margin="805,106,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="CrewLevel_Text" Height="23" IsEnabled="True" TextWrapping="Wrap" Text="" Width="120" Margin="805,134,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="CrewXP_Text" Height="23" IsEnabled="True" TextWrapping="Wrap" Text="" Width="120" Margin="805,164,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="CoolantLevel_Text" Height="23" IsEnabled="True" TextWrapping="Wrap" Text="" Width="120" Margin="805,192,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="ChaosLevel_Text" Height="23" IsEnabled="True" TextWrapping="Wrap" Text="" Width="120" Margin="805,220,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="Stat_00" Height="23" IsEnabled="True" TextWrapping="Wrap" Text="" Width="120" Margin="110,116,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Hidden"/>
+        <TextBox x:Name="Stat_01" Height="23" IsEnabled="True" TextWrapping="Wrap" Text="" Width="120" Margin="110,144,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Hidden"/>
+        <TextBox x:Name="Stat_02" Height="23" IsEnabled="True" TextWrapping="Wrap" Text="" Width="120" Margin="110,172,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Hidden"/>
+        <TextBox x:Name="Stat_03" Height="23" IsEnabled="True" TextWrapping="Wrap" Text="" Width="120" Margin="355,116,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Hidden"/>
+        <TextBox x:Name="Stat_04" Height="23" IsEnabled="True" TextWrapping="Wrap" Text="" Width="120" Margin="355,144,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Hidden"/>
+        <TextBox x:Name="Stat_05" Height="23" IsEnabled="True" TextWrapping="Wrap" Text="" Width="120" Margin="355,172,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Hidden"/>
+        <TextBlock TextWrapping="Wrap" Text="Scrap" VerticalAlignment="Top" Margin="705,57,0,0" FontWeight="Bold" HorizontalAlignment="Left" Width="100"/>
+        <TextBlock TextWrapping="Wrap" Text="Fuel" VerticalAlignment="Top" Margin="705,85,0,0" FontWeight="Bold" HorizontalAlignment="Left" Width="100"/>
+        <TextBlock TextWrapping="Wrap" Text="Credits" VerticalAlignment="Top" Margin="705,113,0,0" FontWeight="Bold" HorizontalAlignment="Left" Width="100"/>
+        <TextBlock TextWrapping="Wrap" Text="Level" VerticalAlignment="Top" Margin="705,141,0,0" FontWeight="Bold" HorizontalAlignment="Left" Width="100"/>
+        <TextBlock TextWrapping="Wrap" Text="Experience" VerticalAlignment="Top" Margin="705,171,0,0" FontWeight="Bold" HorizontalAlignment="Left" Width="100"/>
+        <TextBlock TextWrapping="Wrap" Text="Coolant Level" VerticalAlignment="Top" Margin="705,199,0,0" FontWeight="Bold" HorizontalAlignment="Left" Width="100"/>
+        <TextBlock TextWrapping="Wrap" Text="Chaos Level" VerticalAlignment="Top" Margin="705,227,0,0" FontWeight="Bold" HorizontalAlignment="Left" Width="100"/>
+        <TextBlock x:Name="StatName_00" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="10,123,0,0" FontWeight="Bold" HorizontalAlignment="Left" Width="100" Visibility="Hidden"/> 
+        <TextBlock x:Name="StatName_01" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="10,151,0,0" FontWeight="Bold" HorizontalAlignment="Left" Width="100" Visibility="Hidden"/>
+        <TextBlock x:Name="StatName_02" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="10,179,0,0" FontWeight="Bold" HorizontalAlignment="Left" Width="100" Visibility="Hidden"/>
+        <TextBlock x:Name="StatName_03" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="250,123,0,0" FontWeight="Bold" HorizontalAlignment="Left" Width="100" Visibility="Hidden"/>
+        <TextBlock x:Name="StatName_04" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="250,151,0,0" FontWeight="Bold" HorizontalAlignment="Left" Width="100" Visibility="Hidden"/>
+        <TextBlock x:Name="StatName_05" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="250,179,0,0" FontWeight="Bold" HorizontalAlignment="Left" Width="100" Visibility="Hidden"/>
+    </Grid>
+</Window>
