@@ -7,8 +7,11 @@
 ##Based on Saveeditor by Kandohar [link]https://gitlab.com/Kandohar/PulsarSaveEditor for version 15.3
 
 ##Folders:
+
 Application [An executable file]
+
 PulsarEditor is the main project with UI and save load feature.
+
 PulsarExplorer is a tool to help you to decrypt the savefile.
 
 #Instruction:
